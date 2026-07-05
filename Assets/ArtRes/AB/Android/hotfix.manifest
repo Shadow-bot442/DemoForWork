@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 1371359947
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: b723dd3a802eb8a0f9e901ae4942eaa4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: b723dd3a802eb8a0f9e901ae4942eaa4
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/ArtRes/ILRuntime/HotFix_Project.dll.txt
+- Assets/ArtRes/ILRuntime/HotFix_Project.pdb.txt
+Dependencies: []

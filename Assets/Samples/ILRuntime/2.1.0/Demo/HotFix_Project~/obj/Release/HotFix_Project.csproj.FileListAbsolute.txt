@@ -1,0 +1,6 @@
+C:\Users\Administrator\Desktop\Demo_PeaceOfVeteran\Assets\ArtRes\ILRuntime\HotFix_Project.dll
+C:\Users\Administrator\Desktop\Demo_PeaceOfVeteran\Assets\ArtRes\ILRuntime\HotFix_Project.pdb
+C:\Users\Administrator\Desktop\Demo_PeaceOfVeteran\Assets\Samples\ILRuntime\2.1.0\Demo\HotFix_Project~\obj\Release\HotFix_Project.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\Demo_PeaceOfVeteran\Assets\Samples\ILRuntime\2.1.0\Demo\HotFix_Project~\obj\Release\HotFix_Project.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Demo_PeaceOfVeteran\Assets\Samples\ILRuntime\2.1.0\Demo\HotFix_Project~\obj\Release\HotFix_Project.dll
+C:\Users\Administrator\Desktop\Demo_PeaceOfVeteran\Assets\Samples\ILRuntime\2.1.0\Demo\HotFix_Project~\obj\Release\HotFix_Project.pdb
