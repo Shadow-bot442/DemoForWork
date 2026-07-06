@@ -30,7 +30,7 @@ public class ControlNetwork : Control
     {
         OnAliveChange(true,isAlive_net.Value);              //进入时更新一下 确保和场景一致
         isAlive_net.OnValueChanged += OnAliveChange;        //根据网络变量设置玩家在各自场景中失活激活
-        hp_net.OnValueChanged += OnTakeDamage;              //根据网络变量设置玩家血量和死亡
+        //hp_net.OnValueChanged += OnTakeDamage;              //根据网络变量设置玩家血量和死亡
 
 
         //加载ILRuntime代码更改游戏逻辑
@@ -46,6 +46,7 @@ public class ControlNetwork : Control
         
         nowBullet_net.OnValueChanged += OnBulletReduce;
         id.OnValueChanged += OnIDInit;
+        hp_net.OnValueChanged += OnTakeDamage;              //根据网络变量设置玩家血量和死亡
         base.Start();
         gamePanel.ShowGrade();
         gamePanel.UpdateBK_HP_net(hp_net.Value);
@@ -127,6 +128,7 @@ public class ControlNetwork : Control
             SendInfoServerRpc("玩家" + id.Value + "已死亡");    //其他玩家提示死亡信息
             StartCoroutine(DelaySendInfo("您已死亡"));          //自己提示死亡信息
             Invoke("DelaySetActiveFalse", 2f);                  //死亡2s后显示ui 失活角色
+            ParServerRpc(ObjectPoolMgr.E_ParName.FireDeath, transform.position, Vector3.zero);   //广播死亡特效
 
             AddGradeServerRpc(teamIndex == 1 ? 2 : 1);           //自己死亡时对方比分加1
             UpdateGradeServerRpc();                             //更新所有人的比分
@@ -455,10 +457,12 @@ public class ControlNetwork : Control
         UIManager.Instance.ShowInfo("您已退出游戏");                      //自己提示信息
 
         // 客户端向服务器发送Despawn请求
-        ReturnMenuServerRpc(id.Value);
+        Invoke("DelayDespawn",0.1f);
     }
 
-    
+    void DelayDespawn() {
+        ReturnMenuServerRpc(id.Value);
+    }
 
     // 发给服务器执行
     [ServerRpc(RequireOwnership = false)]

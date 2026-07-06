@@ -13,7 +13,7 @@ public class NetworkGameMgr : NetworkBehaviour
     public GameObject perfab_1;
     public GameObject perfab_2;
 
-
+    //记录比分
     public Vector2 grade = Vector2.zero;
 
     public Dictionary<ulong, GameObject> spawnedPlayers = new Dictionary<ulong, GameObject>();
@@ -144,8 +144,6 @@ public class NetworkGameMgr : NetworkBehaviour
             pointsBeTaked_Red.Remove(id);
             count.x -= 1;
         }
-        UIManager.Instance.ShowInfo("玩家已断开: " + id);
-
     }
 
     //get空闲位置

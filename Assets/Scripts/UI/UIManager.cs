@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     private static UIManager instance = null;
     public static UIManager Instance => instance;
 
+    //UI面板字典存储
     public Dictionary<string, UI_BasePanel> Dics ;
 
     public Text textInfo;
@@ -25,30 +26,6 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         Dics = new Dictionary<string, UI_BasePanel>();
 
-        //异步加载主菜单面板
-        //ResourceRequest request = Resources.LoadAsync<GameObject>("MainPanel");
-        //request.completed += (AsyncOperation) =>
-        //{
-        //    GameObject panel = request.asset as GameObject;
-        //    GameObject go = Instantiate(panel, transform);
-        //    UI_BasePanel basePanel = go.GetComponent<UI_BasePanel>();
-        //    Dics.Add(basePanel.GetType().Name, basePanel);
-        //    ShowPanel<UI_MainPanel>();
-        //};
-        ////加载游戏面板
-        //GameObject obj = Instantiate<GameObject>(Resources.Load<GameObject>("GamePanel"),transform);
-        //UI_BasePanel gamePanel = obj.GetComponent<UI_BasePanel>();
-        //Dics.Add(gamePanel.GetType().Name, gamePanel);
-
-        ////加载死亡面板
-        //obj = Instantiate<GameObject>(Resources.Load<GameObject>("OverPanel"), transform);
-        //UI_BasePanel overPanel = obj.GetComponent<UI_BasePanel>();
-        //Dics.Add(overPanel.GetType().Name, overPanel);
-
-        ////加载停止面板
-        //obj = Instantiate<GameObject>(Resources.Load<GameObject>("StopPanel"), transform);
-        //UI_BasePanel StopPanel = obj.GetComponent<UI_BasePanel>();
-        //Dics.Add(StopPanel.GetType().Name, StopPanel);
 
         RectTransform rectTransform;
         ABMgr.Instance.LoadResAsync<GameObject>("ui", "MainPanel", (obj) =>

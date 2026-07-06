@@ -12,12 +12,12 @@ namespace HotFix_Project
         public static float fireInterval { get { return 0; } }
 
         public static bool CanFire_PC(float angle) {
-            return angle < 2f;
+            return angle < 100f;
         } 
 
         public static bool CanFire_Android(float angle)
         {
-            return angle < 10f;
+            return angle < 100f;
         }
     }
 }
